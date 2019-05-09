@@ -7,7 +7,7 @@ def update_dictionary(a_dictionary, key, value):
                 sorted(a_dictionary)
                 return a_dictionary
 
-    if  key not in a_dictionary:
+    if key not in a_dictionary:
         a_dictionary[key] = value
         sorted(a_dictionary)
         return a_dictionary
