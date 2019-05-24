@@ -37,3 +37,15 @@ Now use it:
     >>> say_my_name(, "Nikky")
     Traceback (most recent call last):
     SyntaxError: invalid syntax
+
+    Test to see if both arguments are empty strings:
+    >>> say_my_name("", "")
+    My name is  
+
+    Test to see if the 1st argument is an empty string:
+    >>> say_my_name("", "poop")
+    My name is  poop
+
+    Test to see if the 2nd argument is an empty string:
+    >>> say_my_name("Buuup", "")
+    My name is Buuup 
