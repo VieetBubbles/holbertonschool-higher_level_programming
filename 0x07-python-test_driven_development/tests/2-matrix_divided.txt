@@ -1,0 +1,84 @@
+The ``2-matrix_divided`` module
+======================
+
+Using ``matrix_divided``
+----------------------
+
+This is an example text file in reStructuredText format.  First import
+``matrix_divided`` from the ``2-matrix_divided`` module:
+
+    >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+Now use it:
+    Testing for matrix is divisible by integers:
+    >>> matrix = [
+    ... [1, 2, 3],
+    ... [4, 5, 6]]
+    >>> matrix_divided(matrix, 3)
+    [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+    Testing for matrix is divisible by integers with float elements:
+    >>> matrix = [
+    ... [1, 2.0, 3],
+    ... [4.0, 5, 6.0]]
+    >>> matrix_divided(matrix, 3)
+    [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+    Testing if matrix is an empty list:
+    >>> matrix = []
+    >>> matrix_divided(matrix, 7)
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+    Testing if no arguments was used:
+    >>> matrix_divided()
+    Traceback (most recent call last):
+    TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
+
+    Testing if theres only 1  arguments was used:
+    >>> matrix_divided(matrix)
+    Traceback (most recent call last):
+    TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+    Testing if div is 0:
+    >>> matrix_divided(matrix, 0)
+    Traceback (most recent call last):
+    ZeroDivisionError: division by zero
+
+    Testing if div is not an integer or float:
+    >>> matrix_divided(matrix, "gkggk")
+    Traceback (most recent call last):
+    TypeError: div must be a number
+
+    Testing if matrix is a list of strings:
+    >>> matrix = [
+    ... [1, "gghhh", 3],
+    ... ["g", 5, "nooio"]]
+    >>> matrix_divided(matrix, 3)
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+    Testing if matrix is a string and not a list of list:
+    >>> matrix_divided("nopppw", 3)
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+    Testing if matrix is just a regular list:
+    >>> matrix = [7, 8, 9]
+    >>> matrix_divided(matrix, 3)
+    Traceback (most recent call last):
+    TypeError: object of type 'int' has no len()
+
+    Test if the matrix's row are not the same length:
+    >>> matrix = [
+    ... [1, 2, 3, 8],
+    ... [4, 5, 6]]
+    >>> matrix_divided(matrix, 3)
+    Traceback (most recent call last):
+    TypeError: Each row of the matrix must have the same size
+
+    Test if there's 1 row in the matrix:
+    >>> matrix = [
+    ... [1, 2, 3]]
+    >>> matrix_divided(matrix, 3)
+    [[0.33, 0.67, 1.0]]
