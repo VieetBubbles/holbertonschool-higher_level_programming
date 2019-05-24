@@ -1,0 +1,71 @@
+The ``5-text_indentation`` module
+======================
+
+Using ``text_indentation``
+----------------------
+
+This is an example text file in reStructuredText format.  First import
+``text_indentation`` from the ``5-text_indentation`` module:
+
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Now use it:
+    Test if the argument is a string:
+    >>> text_indentation("Hello? Is Lorem there.")
+    Hello?
+    <BLANKLINE>
+    Is Lorem there.
+    <BLANKLINE>
+
+    Test if there is no argument given:
+    >>> text_indentation()
+    Traceback (most recent call last):
+    TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+    Test if the argument take in an empty string:
+    >>> text_indentation("")
+
+    Test if the argument is not a string:
+    >>> text_indentation(22)
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+    Test if there are leading spaces in the beginning of the string:
+    >>> text_indentation("  Lorem")
+    Lorem
+
+    Test if there are leading spaces in the end of the string:
+    >>> text_indentation("Lorem        ")
+    Lorem
+
+    Test if there are leading spaces in the beginning, middle and end of the string:
+    >>> text_indentation("    Lorem.     Snickers?     ")
+    Lorem.
+    <BLANKLINE>
+    Snickers?
+    <BLANKLINE>
+
+    Test if the ther are consequtive delimiters:
+    >>> text_indentation(".?:")
+    .
+    <BLANKLINE>
+    ?
+    <BLANKLINE>
+    :
+    <BLANKLINE>
+
+    Test if the delimiters .?: are in the string:
+    >>> text_indentation("  hello .?. Lorem   ")
+    hello .
+    <BLANKLINE>
+    ?
+    <BLANKLINE>
+    .
+    <BLANKLINE>
+    Lorem
+
+    Test for empty string:
+    >>> text_indentation("")
+
+    Test for newline as a string:
+    >>> text_indentation("\n")
