@@ -1,0 +1,56 @@
+The ``0-add_integer`` module
+======================
+
+Using ``add_integer``
+----------------------
+
+This is an example text file in reStructuredText format.  First import
+``add_integer`` from the ``0_add_integer`` module:
+
+    >>> add_integer = __import__('0-add_integer').add_integer
+
+Now use it:
+    Testing for basic integer arithmetic:
+    >>> add_integer(1, 2)
+    3
+
+    Testing for basic float in thhe 1st argument arithmetic:
+    >>> add_integer(89.3, 6)
+    95
+
+    Testing for basic float in thhe 2nd argument arithmetic:
+    >>> add_integer(54, 9.6)
+    63
+
+    Testing for basic negative integer arithmetic:
+    >>> add_integer(-2, -8)
+    -10
+
+    Testing if the argument takes in 1 argument:
+    >>> add_integer(2)
+    100
+
+    Testing if not an integer in the first argument case:
+    >>> add_integer('huhu', 7)
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+    Testing if not an integer in the second argument case:
+    >>> add_integer(8, 'yuyuh')
+    Traceback (most recent call last):
+    TypeError: b must be an integer
+
+    Testing if there are no arguments:
+    >>> add_integer()
+    Traceback (most recent call last):
+    TypeError: add_integer() missing 1 required positional argument: 'a'
+
+    Testing if there are 3 or more arguments:
+    >>> add_integer(1, 3, 66)
+    Traceback (most recent call last):
+    TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
+
+    Testing if both arguments are not strings
+    >>> add_integer('injjj', 'bdbab')
+    Traceback (most recent call last):
+    TypeError: a must be an integer
