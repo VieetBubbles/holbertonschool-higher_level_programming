@@ -86,7 +86,7 @@ Now use it:
     Test if matrix has an empty list:
     >>> matrix = [[]]
     >>> matrix_divided(matrix, 3)
-    TypeError:  matrix must be a matrix (list of lists) of integers/floats
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
 
     Test if the original matrix has not been modified:
     >>>
