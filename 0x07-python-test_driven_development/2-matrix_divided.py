@@ -2,6 +2,8 @@
 """
 The Matrix division module
 """
+
+
 def matrix_divided(matrix, div):
     """
     Function that takes a matrix and divides it by div.
