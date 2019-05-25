@@ -65,7 +65,12 @@ Now use it:
     Traceback (most recent call last):
     OverflowError: cannot convert float infinity to integer
 
-    Test for cannot convert float NaN to integer:
+    Test for cannot convert string to float:
     >>> add_integer(float("vdma"), 89)
     Traceback (most recent call last):
     ValueError: could not convert string to float: 'vdma'
+
+    Test for cannot convert float NaN to integer:
+    >>> add_integer(int("NaN"), 89)
+    Traceback (most recent call last):
+    ValueError: invalid literal for int() with base 10: 'NaN'
