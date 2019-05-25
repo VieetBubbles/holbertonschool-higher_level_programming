@@ -82,3 +82,14 @@ Now use it:
     ... [1, 2, 3]]
     >>> matrix_divided(matrix, 3)
     [[0.33, 0.67, 1.0]]
+
+    Test if matrix has an empty list:
+    >>> matrix = [[]]
+    >>> matrix_divided(matrix, 3)
+    TypeError: ??
+
+    Test if the original matrix has not been modified:
+    >>>
+
+    Test for negative numbers:
+    >>>
