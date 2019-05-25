@@ -54,3 +54,8 @@ Now use it:
     >>> add_integer('injjj', 'bdbab')
     Traceback (most recent call last):
     TypeError: a must be an integer
+
+    Test for infinity numbers:
+    >>> add_integer(1, int('inf'))
+    Traceback (most recent call last):
+    ValueError: invalid literal for int() with base 10: 'inf'
