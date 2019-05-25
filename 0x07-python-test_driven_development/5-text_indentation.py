@@ -6,8 +6,8 @@ The text indentation module
 
 def text_indentation(text):
     """
-    Function that prints a text with 2 new lines after each of these characters:
-    ., ? and :
+    Function that prints a text with 2 new lines after each of these
+    characters: ., ? and :
     Args:
         text: the string that is to be broken down
     """
