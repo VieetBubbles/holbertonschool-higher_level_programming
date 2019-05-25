@@ -58,5 +58,10 @@ class TestMaxMethods(unittest.TestCase):
         string_list = ["hhhhhh"]
         self.assertRaises(TypeError, max_integer, "list must contain either integers or floats", string_list)
 
+    def test_middle(self):
+        """Test for “max in the middle” exists"""
+        my_list = [1, 5, 88, 7, 11]
+        self.assertEqual(max_integer(my_list), 88)
+
     if __name__ == "__main__":
         uniitest.main()
