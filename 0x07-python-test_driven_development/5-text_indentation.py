@@ -20,7 +20,7 @@ def text_indentation(text):
         if c is " " and after_ns_space is True:
             pass
 
-        elif c is "." or c is "?" or c is ":":
+        elif c in ".?:":
             new_sentence += c + "\n\n"
             after_ns_space = True
 
