@@ -10,9 +10,15 @@ def print_square(size):
     Args:
         size: the size of the square
     """
-    if type(size) != int:
+    if type(size) is not int:
         raise TypeError("size must be an integer")
+
     if size < 0:
         raise ValueError("size must be >= 0")
 
-    print(("#" * size + "\n") * size, end="")
+    for row in range(size):
+        for c in range(size):
+            if c != (size - 1):
+                print("#", end="")
+            else:
+                print("#")
