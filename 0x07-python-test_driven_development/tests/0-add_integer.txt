@@ -71,6 +71,6 @@ Now use it:
     ValueError: could not convert string to float: 'vdma'
 
     Test for cannot convert float NaN to integer:
-    >>> add_integer(int("NaN"), 89)
+    >>> add_integer(float("NaN"), 89)
     Traceback (most recent call last):
-    ValueError: invalid literal for int() with base 10: 'NaN'
+    ValueError: cannot convert float NaN to integer
