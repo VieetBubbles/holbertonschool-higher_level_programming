@@ -2,6 +2,8 @@
 """
 The adding 2 integers Module
 """
+
+
 def add_integer(a, b=98):
     """
     Python function that adds 2 integers
