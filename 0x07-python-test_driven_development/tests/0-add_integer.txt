@@ -59,3 +59,13 @@ Now use it:
     >>> add_integer(1, int('inf'))
     Traceback (most recent call last):
     ValueError: invalid literal for int() with base 10: 'inf'
+
+    Test for overflow floats:
+    >>> add_integer(float('inf'), 8)
+    Traceback (most recent call last):
+    OverflowError: cannot convert float infinity to integer
+
+    Test for NaN error:
+    >>> add_integer("hhhkk", None)
+    Traceback (most recent call last):
+    TypeError: a must be an integer
