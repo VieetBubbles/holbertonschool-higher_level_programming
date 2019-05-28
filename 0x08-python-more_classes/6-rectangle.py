@@ -28,14 +28,16 @@ class Rectangle:
         """
         if self.__width is 0 or self.__height is 0:
             return ""
-        return (("#" * self.__width + "\n") * (self.__height - 1) + ("#" * self.__width))
+        return (("#" * self.__width + "\n") * (self.__height - 1)
+                + ("#" * self.__width))
 
     def __repr__(self):
         """
         instance method that should return a string representation of the
         rectangle to be able to recreate a new instance by using eval()
         """
-        return "Rectangle(" + str(self.__width) + ", " + str(self.__height) + ")"
+        return "Rectangle(" + str(self.__width) + ", "
+        + str(self.__height) + ")"
 
     def __del__(self):
         """
