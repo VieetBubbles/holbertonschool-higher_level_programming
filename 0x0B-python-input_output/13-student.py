@@ -32,4 +32,4 @@ class Student:
         Public method that replaces all attributes of the Student instance
         """
         for key, value in json.items():
-            self.__dict__[k] = value
+            self.__dict__[key] = value
