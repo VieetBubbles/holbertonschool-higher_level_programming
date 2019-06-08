@@ -83,5 +83,5 @@ Now use it:
     >>> my_list = MyList([1, 8, 2, 9])
     >>> new_list = my_list.print_sorted()
     [1, 2, 8, 9]
-    print(my_list)
+    >>> print(my_list)
     [1, 8, 2, 9]
