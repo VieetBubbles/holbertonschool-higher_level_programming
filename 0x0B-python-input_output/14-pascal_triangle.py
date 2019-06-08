@@ -27,6 +27,10 @@ def pascal_triangle(n):
         row = [1]
         if number > 0:
             for j in range(number):
+
+                # formula for pascal triangle
                 row.append(sum(pascal_t[-1][j:j + 2]))
+
+        # create list of lists
         pascal_t.append(row)
     return pascal_t
