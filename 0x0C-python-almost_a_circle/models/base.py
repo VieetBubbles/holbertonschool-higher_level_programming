@@ -76,3 +76,19 @@ class Base:
         dummy_ob.update(**dictionary)
 
         return dummy_ob
+
+    @classmethod
+    def load_from_file(cls):
+        """
+        class method that returns a list of instances.
+        """
+        file_name = cls.__name__ + ".json"
+        new_ob_list = []
+
+        with open(file_name, 'r') as f:
+            new_ob_list = cls.from_json_string(f.read())
+
+        for index, value in enumerate(new_ob_list):
+            new_ob_list[index] = cls.create(**new_ob_list[index])
+
+        return new_ob_list
