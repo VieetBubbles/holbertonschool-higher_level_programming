@@ -146,6 +146,7 @@ class Rectangle(Base):
 
     def to_dictionary(self):
         """
+        public method that returns the dictionary representation of a Rectangle.
         """
         new_dict = {}
         new_dict["id"] = self.id
