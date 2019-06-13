@@ -3,6 +3,7 @@
 The base module.
 """
 import json
+import os
 
 
 class Base:
@@ -85,10 +86,13 @@ class Base:
         file_name = cls.__name__ + ".json"
         new_ob_list = []
 
+        if os.path.exists(file_name) is False:
+            return []
+
         with open(file_name, 'r') as f:
-            new_ob_list = cls.from_json_string(f.read())
+            obj_instance = cls.from_json_string(f.read())
 
-        for index, value in enumerate(new_ob_list):
-            new_ob_list[index] = cls.create(**new_ob_list[index])
+        for dicti in obj_instance:
+            new_ob_list.append(cls.create(**dicti))
 
-        return new_ob_list
+        return (new_ob_list)
