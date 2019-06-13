@@ -30,7 +30,7 @@ class Base:
         static method that returns the JSON string representation
         of list_dictionaries.
         """
-        if list_dictionaries is None:
+        if list_dictionaries is None or len(list_dictionaries) is 0:
             return "[]"
         else:
             return json.dumps(list_dictionaries)
