@@ -20,7 +20,7 @@ class Base:
             id - assume it is an integer.
         """
         if id is None:
-            type(self).__nb_objects += 1
+            Base.__nb_objects += 1
             self.id = type(self).__nb_objects
         else:
             self.id = id
