@@ -1,3 +1,3 @@
 -- jba,dba
 -- nalknda
-SELECT state, MAX(value) FROM temperatures GROUP BY state ORDER BY state ASC LIMIT 3;
+SELECT state, MAX(value) FROM temperatures GROUP BY state ORDER BY state;
