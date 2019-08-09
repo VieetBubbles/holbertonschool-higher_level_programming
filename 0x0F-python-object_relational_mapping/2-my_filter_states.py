@@ -4,11 +4,12 @@
 
 if __name__ == '__main__':
     import MySQLdb
+    import sys
 
     db = MySQLdb.connect(host="localhost", port=3306,      # your host
                          user="root",                      # your username
                          passwd="root",                    # your password
-                         db="hbtn_0e_0_usa",               # name of database
+                         db=sys.argv[3],               # name of database
                          charset="utf8")
 
     # you must create a Cursor object. It will let
@@ -16,7 +17,8 @@ if __name__ == '__main__':
     cur = db.cursor()
 
     # HERE I have to know SQL to grab all states in my database
-    cur.execute("SELECT * FROM states WHERE name = 'Arizona' ORDER BY id ASC")
+    cur.execute("SELECT * FROM states WHERE name = '{}' ORDER BY id ASC"
+                .format(sys.argv[4]))
 
     # print all the rows in the table
     query_rows = cur.fetchall()
