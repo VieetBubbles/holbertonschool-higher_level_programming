@@ -17,8 +17,9 @@ if __name__ == '__main__':
     cur = db.cursor()
 
     # HERE I have to know SQL to grab all states in my database
-    cur.execute("SELECT * FROM states WHERE name = '{}' ORDER BY id ASC"
-                .format(sys.argv[4]))
+    cur.execute("SELECT * FROM states WHERE BINARY " +
+                "name='{}' ".format(sys.argv[4]) +
+                "ORDER BY id ASC")
 
     # print all the rows in the table
     query_rows = cur.fetchall()
