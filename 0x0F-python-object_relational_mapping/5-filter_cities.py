@@ -15,6 +15,7 @@ if __name__ == '__main__':
     # you must create a Cursor object. It will let
     #  you execute all the queries you need
     cur = db.cursor()
+    stemp = ""
 
     dig = "SELECT cities.id, cities.name, states.name FROM cities "+\
           "LEFT JOIN states ON states.id = cities.state_id "+\
@@ -26,12 +27,10 @@ if __name__ == '__main__':
     # print all the rows in the table
     query_rows = cur.fetchall()
 
-    count = 0;
     for row in query_rows:
-        if count != len(row) - 1:
-            print(row[1], end=', ')
-        count = count + 1;
-    print(row[1])
+        stemp += str(row[1]) + ", "
+    pcity = stemp.strip(" ,")
+    print(pcity)
 
     cur.close()
     db.close()
