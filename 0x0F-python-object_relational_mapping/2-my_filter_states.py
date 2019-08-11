@@ -24,7 +24,7 @@ if __name__ == '__main__':
     query_rows = cur.fetchall()
 
     for row in query_rows:
-        print("{}, {}".format(row[0], row[1]))
+        print("({}, {})".format(row[0], row[1]))
 
     cur.close()
     db.close()
