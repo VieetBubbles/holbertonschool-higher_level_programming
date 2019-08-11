@@ -17,11 +17,13 @@ if __name__ == '__main__':
     session = Session(bind=engine)
 
     # HERE: no SQL query, only objects!
-    for state in session.query(State).order_by(State.id).all():
-        if sys.argv[4] == state.name:
-            var = state.id
-            break
-        else:
-            var = "Not found"
-    print("{}".format(var))
+    state_name = sys.argv[4]
+
+    states = session.query(State)
+    table = states.filter_by(name=state_name).first()
+    if table:
+        print(table.id)
+    else:
+        print("Not Found")
+
     session.close()
