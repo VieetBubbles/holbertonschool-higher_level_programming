@@ -17,8 +17,8 @@ if __name__ == '__main__':
     cur = db.cursor()
     stemp = ""
 
-    dig = "SELECT cities.id, cities.name, states.name FROM cities "+\
-          "LEFT JOIN states ON states.id = cities.state_id "+\
+    dig = "SELECT cities.id, cities.name, states.name FROM cities " +\
+          "LEFT JOIN states ON states.id = cities.state_id " +\
           "WHERE states.name = %s ORDER BY cities.id ASC"
 
     # HERE I have to know SQL to grab all states in my database
