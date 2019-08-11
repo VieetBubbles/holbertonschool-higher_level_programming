@@ -5,7 +5,9 @@
 import sys
 from model_state import Base, State
 from sqlalchemy import create_engine
-from sqlalchemy.orm import Session
+from sqlalchemy.orm import sessionmaker
+
+state_name = sys.argv[4]
 
 if __name__ == '__main__':
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'
@@ -14,16 +16,16 @@ if __name__ == '__main__':
 
     Base.metadata.create_all(engine)
 
-    session = Session(bind=engine)
+    Session = sessionmaker(bind=engine)
+    session = Session()
 
     # HERE: no SQL query, only objects!
-    state_name = sys.argv[4]
 
     states = session.query(State)
     table = states.filter_by(name=state_name).first()
     if table:
         print(table.id)
     else:
-        print("Not Found")
+        print("Not found")
 
     session.close()
