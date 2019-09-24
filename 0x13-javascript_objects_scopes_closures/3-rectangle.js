@@ -12,13 +12,13 @@ class Rectangle {
   // The Methods of the class Rectangle
   // Method to print Rectangle
   print () {
-    let r_array = [];
+    let rArray = [];
     for (let h = 0; h < this.height; h++) {
-      r_array = [];
+      rArray = [];
       for (let w = 0; w < this.width; w++) {
-        r_array.push('X');
+        rArray.push('X');
       }
-      console.log(r_array.join(''));
+      console.log(rArray.join(''));
     }
   }
 }
