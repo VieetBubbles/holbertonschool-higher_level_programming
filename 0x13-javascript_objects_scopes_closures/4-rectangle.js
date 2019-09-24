@@ -22,6 +22,7 @@ class Rectangle {
     }
   }
 
+  // Method to sqp the width and height values
   rotate () {
     let temp = 0;
 
@@ -30,6 +31,7 @@ class Rectangle {
     this.height = temp;
   }
 
+  // Methid that doubles the width and height values
   double () {
     this.width *= 2;
     this.height *= 2;
