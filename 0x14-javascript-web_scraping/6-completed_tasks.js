@@ -9,7 +9,7 @@ request.get(process.argv[2], function (err, res, body) {
     const newDict = {};
     const list = JSON.parse(body);
 
-    for (let i = 1; i < list.length; i++) {
+    for (let i = 0; i < list.length; i++) {
       const key = list[i].userId;
       if (list[i].completed === true) {
         // if new dictionary at id is empty then fill in 1st value as 1.
